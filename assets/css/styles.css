@@ -1,20 +1,74 @@
 * {
   box-sizing: border-box;
+  background-color: #f6cefc;
 }
 /* Flex the header to be spaced fully apart, Highscores left side, timer right side */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#timer {
+  padding-right: 3vw;
+}
 /* Style the main box to flex in the middle */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10%;
+}
 
 /* Fix sizing and font of the question */
+.question {
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+}
 
 /* Have paragraphs show, and then hide */
+.description {
+  display: block;
+  font-weight: 500;
+  font-size: larger;
+  max-width: 50%;
+  text-align: center;
+  margin: 20px 10px;
+}
 
 /* Style buttons to be colored, rounded corners, and white text */
-
+.button {
+  background-color: purple;
+  color: white;
+  border-color: black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 /* Style popup text "wrong" or "correct" */
-
+.popup-text {
+  font-weight: bold;
+  text-transform: uppercase;
+}
 /* Highscore box has to be colored */
-
+.highscore-box {
+  background-color: plum;
+}
 /* Make invisible highscore box */
 
 .button-grid {

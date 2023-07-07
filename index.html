@@ -6,33 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/assets/css/reset.css" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
-    <title>Soulsborne Quiz</title>
+    <title>Javascript Quiz</title>
   </head>
   <body>
     <!-- Make header element for view highscores and time -->
     <header>
-      <ul>
-        <li id="highscore"><h3>View Highscores</h3></li>
-        <li id="timer"><h3>Time:</h3></li>
-      </ul>
+      <div class="tools">
+        <button id="highscores" class="button">View highscores</button>
+        <h3 id="timer">Time:</h3>
+      </div>
     </header>
 
     <main>
       <!-- Main box container -->
       <div class="wrapper" id="wrapper">
         <!-- Question being asked  -->
-        <h1>Coding Quiz Challenge</h1>
+        <h1 class="question">Coding Quiz Challenge</h1>
 
         <!-- Paragraph in the beginning of the quiz -->
         <p class="description" id="description">
-          If you are a fan of Soulsborne games, this quiz will most likely give
-          you a run for your money. See if you can make it through the quiz and
-          max your score on the leaderboard at the end!
+          If you're just learning Javascript, this quiz is a great way to test
+          your knowledge and see how well you are managing all that info.
+          Careful though, each wrong answer will deduct time from the timer!
         </p>
 
         <!-- Start Game Button -->
         <div class="start" id="start">
-          <button></button>
+          <button id="start-btn" class="button">Start Game</button>
         </div>
 
         <!-- Vertical button setup -->
