@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+/* Flex the header to be spaced fully apart, Highscores left side, timer right side */
+
+/* Style the main box to flex in the middle */
+
+/* Fix sizing and font of the question */
+
+/* Have paragraphs show, and then hide */
+
+/* Style buttons to be colored, rounded corners, and white text */
+
+/* Style popup text "wrong" or "correct" */
+
+/* Highscore box has to be colored */
+
+/* Make invisible highscore box */
+
+.button-grid {
+  visibility: hidden;
+}
+#leaderboard {
+  visibility: hidden;
+}

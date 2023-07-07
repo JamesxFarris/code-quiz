@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <title>Soulsborne Quiz</title>
+  </head>
+  <body>
+    <!-- Make header element for view highscores and time -->
+    <header>
+      <ul>
+        <li id="highscore"><h3>View Highscores</h3></li>
+        <li id="timer"><h3>Time:</h3></li>
+      </ul>
+    </header>
+
+    <main>
+      <!-- Main box container -->
+      <div class="wrapper" id="wrapper">
+        <!-- Question being asked  -->
+        <h1>Coding Quiz Challenge</h1>
+
+        <!-- Paragraph in the beginning of the quiz -->
+        <p class="description" id="description">
+          If you are a fan of Soulsborne games, this quiz will most likely give
+          you a run for your money. See if you can make it through the quiz and
+          max your score on the leaderboard at the end!
+        </p>
+
+        <!-- Start Game Button -->
+        <div class="start" id="start">
+          <button></button>
+        </div>
+
+        <!-- Vertical button setup -->
+        <div class="button-grid" id="grid">
+          <button class="button"></button>
+          <button class="button"></button>
+          <button class="button"></button>
+          <button class="button"></button>
+        </div>
+
+        <!-- Leaderboard -->
+        <div id="leaderboard">
+          <h1></h1>
+          <p></p>
+          <label for="text"></label>
+          <input type="text" />
+        </div>
+      </div>
+    </main>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
