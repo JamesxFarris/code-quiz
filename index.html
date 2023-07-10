@@ -21,7 +21,7 @@
       <!-- Main box container -->
       <div class="wrapper" id="wrapper">
         <!-- Question being asked  -->
-        <h1 class="question" id="question">Coding Quiz Challenge</h1>
+        <h1 class="question" id="question">Javascript Quiz</h1>
 
         <!-- Paragraph in the beginning of the quiz -->
         <p class="description" id="description">
@@ -45,10 +45,11 @@
 
         <!-- Leaderboard -->
         <div id="leaderboard">
-          <h1></h1>
-          <p></p>
-          <label for="text"></label>
-          <input type="text" />
+          <h1>High Scores</h1>
+          <ol id="scoreList"></ol>
+          <label for="nameInput">Enter your name:</label>
+          <input type="text" id="nameInput" />
+          <button id="submitBtn" class="button">Submit</button>
         </div>
       </div>
     </main>

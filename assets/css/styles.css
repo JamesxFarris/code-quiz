@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  background-color: #f6cefc;
+  background-color: whitesmoke;
 }
 /* Flex the header to be spaced fully apart, Highscores left side, timer right side */
 header {
@@ -60,6 +60,23 @@ header {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.answerBtn {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 50px;
+  margin: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.answerBtn:hover {
+  background-color: purple;
+  color: white;
+}
 /* Style popup text "wrong" or "correct" */
 .popup-text {
   font-weight: bold;
@@ -72,8 +89,32 @@ header {
 /* Make invisible highscore box */
 
 .button-grid {
-  visibility: hidden;
+  display: none;
 }
+
 #leaderboard {
-  visibility: hidden;
+  display: none;
+}
+
+#leaderboard {
+  display: none;
+}
+
+#leaderboard.show {
+  display: block;
+}
+
+#scoreList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#scoreList li {
+  margin-bottom: 10px;
+}
+
+#nameInput,
+#submitBtn {
+  display: block;
+  margin-top: 10px;
 }
