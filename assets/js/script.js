@@ -1,7 +1,5 @@
-// Call the question id's
 const questionElement = document.querySelector(".question");
 const descriptionElement = document.querySelector(".description");
-// Call the button id's
 const startButton = document.querySelector("#start-btn");
 const answerButtons = document.querySelectorAll(".answerBtn");
 const answers = document.querySelector(".button-grid");
@@ -126,7 +124,59 @@ function endQuiz() {
   questionElement.style.display = "none";
   answers.style.display = "none";
 
-  // Show highscore page elements
+  // Show highscore page elements and clear existing
+  const leaderboard = document.getElementById("leaderboard");
+  leaderboard.classList.add("show");
+
+  const scoreList = document.querySelector("#scoreList");
+  scoreList.innerHTML = "";
+
+  // Retrieve highscores from local storage
+  const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+
+  // Sort highscores in descending order
+  highscores.sort((a, b) => b.score - a.score);
+
+  // Display highscores in the list
+  highscores.forEach((highscore) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${highscore.name}: ${highscore.score}`;
+    scoreList.appendChild(listItem);
+  });
+}
+
+// Function for saving the high score at the end of the quiz
+function saveHighscore() {
+  const nameInput = document.querySelector("#nameInput");
+  const playerName = nameInput.value.trim();
+
+  if (playerName !== "") {
+    const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+    const newHighscore = {
+      name: playerName,
+      score: score,
+    };
+
+    // Add highscore to an array of highscores
+    highscores.push(newHighscore);
+
+    // Save them all to local storage
+    localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    nameInput.value = "";
+
+    // Display new highscores
+    endQuiz();
+  }
+}
+
+// "View Highscores" button"
+highscoresButton.addEventListener("click", function () {
+  startButton.style.display = "none";
+  descriptionElement.style.display = "none";
+  answers.style.display = "none";
+
+  const leaderboard = document.getElementById("leaderboard");
   leaderboard.classList.add("show");
 
   // Clear existing highscores
@@ -145,40 +195,13 @@ function endQuiz() {
     listItem.textContent = `${highscore.name}: ${highscore.score}`;
     scoreList.appendChild(listItem);
   });
+});
 
-  // Add event listener to submit button
-  const submitBtn = document.querySelector("#submitBtn");
-  submitBtn.addEventListener("click", saveHighscore);
-}
-
-function saveHighscore() {
-  const nameInput = document.querySelector("#nameInput");
-  const playerName = nameInput.value.trim();
-
-  if (playerName !== "") {
-    const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
-
-    // Create a new highscore object
-    const newHighscore = {
-      name: playerName,
-      score: score,
-    };
-
-    // Add the new highscore to the array
-    highscores.push(newHighscore);
-
-    // Save the updated highscores to local storage
-    localStorage.setItem("highscores", JSON.stringify(highscores));
-
-    // Clear the input field
-    nameInput.value = "";
-
-    // Display the updated highscores
-    endQuiz();
-  }
-}
 startButton.addEventListener("click", startQuiz);
 
 for (let i = 0; i < answerButtons.length; i++) {
   answerButtons[i].addEventListener("click", checkAnswer);
 }
+
+const submitBtn = document.querySelector("#submitBtn");
+submitBtn.addEventListener("click", saveHighscore);
