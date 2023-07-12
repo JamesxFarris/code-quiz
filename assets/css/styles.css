@@ -9,6 +9,10 @@ header {
   align-items: center;
 }
 
+li {
+  font-weight: 400;
+}
+
 .tools {
   display: flex;
   flex-direction: row;
@@ -91,6 +95,11 @@ header {
 
 .button-grid {
   display: none;
+}
+
+#enter {
+  font-weight: bold;
+  font-size: 22px;
 }
 
 #leaderboard {
